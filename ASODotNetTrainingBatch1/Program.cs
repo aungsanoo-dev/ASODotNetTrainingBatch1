@@ -1,10 +1,93 @@
-﻿int[] str = { };
-var result = str.FirstOrDefault();
+﻿using ASODotNetTrainingBatch1;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Xml.Linq;
 
-Console.WriteLine(result); // Output: 0
+Homework.Main(new string[] { "arg1", "arg2" });
 
-decimal amount = 100000.90m; //m tells the compiler that this number is decimal. d for double. f for float.
-Console.WriteLine(amount.ToString("n0"));
+Product product = new Product(1, "P001", "Apple", 3000, 10, "Fruit");
+
+
+BeforePrice:
+Console.WriteLine("Input Product Quantity: ");
+string quantityResult = Console.ReadLine();
+decimal price = 0;
+bool isDecimal = decimal.TryParse(quantityResult, out price);
+if(!isDecimal)
+{
+    Console.WriteLine("Invalid price.");
+    goto BeforePrice;
+}
+
+BeforeQuantity:
+int quantity = 0;
+bool isInt = int.TryParse(quantityResult, out quantity);
+if (isInt)
+{
+    Console.WriteLine("Invalid Quantity");
+    goto BeforeQuantity;
+}
+
+Data.ProductId++;
+
+string productCode = "P001";
+
+//Product product = new Product
+//{
+//    Id = 1,
+//    Code = "P001",
+//    Name = "Product 1",
+//    Price = 10.99m,
+//    Quantity = 100,
+//    Category = "Category A",
+//}
+   
+internal class Book
+{
+    private string booktitle;
+    private int bookpages;
+    public string BookTitle
+    {
+        get { return booktitle; }
+        set
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                booktitle = value;
+            }
+            else
+            {
+                throw new ArgumentException("Booktitle cannot be empty.");
+            }
+        }
+    }
+    public int Bookpages
+    {
+        get { return bookpages; }
+        set
+        {
+            if (value >= 0)
+            {
+                bookpages = value;
+            }
+            else
+            {
+                throw new ArgumentException("Pages cannot be negative or zero");
+            }
+        }
+    }
+
+    public Book(string booktitle, int bookpages)
+    {
+        BookTitle = booktitle;
+        Bookpages = bookpages;
+    }
+
+    public void describe()
+    {
+        Console.WriteLine($"The book '{booktitle}' has {bookpages} pages.");
+    }
+}
 
 //File.WriteAllText("test.txt", "Hello World!");
 //var result = File.ReadAllText("test.txt");
@@ -205,3 +288,54 @@ Console.WriteLine(amount.ToString("n0"));
 //        throw new NotImplementedException();
 //    }
 //}
+
+//int[] num = { 12, 22, 34, 43, 20};
+//string[] names = { };
+//decimal[] points = { };
+
+//var ascendingOrder = num.OrderBy(nums => nums).ToArray();
+//var descendingOrder = num.OrderByDescending(nums => nums).ToArray();
+//var evenNums = num.Where(nums => nums % 2 == 0).ToArray();
+//var twoTimes = num.Select(nums => nums * 2).ToArray();
+//var firstElement = num.First();
+//var firstOrDefault_int = num.FirstOrDefault(nums => nums > 5);
+//var firstOrDefault_string = names.FirstOrDefault();
+//var firstOrDefault_decimal = points.FirstOrDefault();
+//var sum = num.Sum();
+//var max = num.Max();
+//var min = num.Min();
+//var average = num.Average();
+//var count = num.Count();
+
+//Console.Write("Even Numbers: ");
+//for (var i = 0; i < evenNums.Length; i++)
+//{
+//    Console.Write(evenNums[i]);
+//    if (i < evenNums.Length - 1)
+//    {
+//        Console.Write(", ");
+//    }
+//}
+//Console.WriteLine('\n');
+
+//Console.Write("Multiply with Two: ");
+//for (var i = 0; i < twoTimes.Length; i++)
+//{
+//    Console.Write(twoTimes[i]);
+//    if (i < twoTimes.Length - 1)
+//    {
+//        Console.Write(", ");
+//    }
+//}
+//Console.WriteLine('\n');
+
+//Console.Write("Ascending Order: ");
+//for (var i = 0; i < ascendingOrder.Length; i++)
+//{
+//    Console.Write(ascendingOrder[i]);
+//    if (i < ascendingOrder.Length - 1)
+//    {
+//        Console.Write(", ");
+//    }
+//}
+//Console.WriteLine('\n');
