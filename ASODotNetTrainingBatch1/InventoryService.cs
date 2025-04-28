@@ -8,7 +8,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ASODotNetTrainingBatch1
 {
-    internal class Inventory
+    internal class InventoryService
     {
         public void CreateProduct()
         {
