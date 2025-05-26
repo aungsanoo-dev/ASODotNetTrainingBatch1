@@ -5,6 +5,10 @@ VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1", "ASODotNetTrainingBatch1\ASODotNetTrainingBatch1.csproj", "{ADABC319-4E4F-43E0-9413-DCA95DDC8D88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.ConsoleApp3", "ASODotNetTrainingBatch1.ConsoleApp3\ASODotNetTrainingBatch1.ConsoleApp3.csproj", "{85629DB2-77C6-4894-A47C-D1D72BEE0985}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.WinFormsApp", "ASODotNetTrainingBatch1.WinFormsApp\ASODotNetTrainingBatch1.WinFormsApp.csproj", "{B688EA03-B63C-4D7A-A0A8-6EA3CD007A33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{ADABC319-4E4F-43E0-9413-DCA95DDC8D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADABC319-4E4F-43E0-9413-DCA95DDC8D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADABC319-4E4F-43E0-9413-DCA95DDC8D88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85629DB2-77C6-4894-A47C-D1D72BEE0985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85629DB2-77C6-4894-A47C-D1D72BEE0985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85629DB2-77C6-4894-A47C-D1D72BEE0985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85629DB2-77C6-4894-A47C-D1D72BEE0985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B688EA03-B63C-4D7A-A0A8-6EA3CD007A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B688EA03-B63C-4D7A-A0A8-6EA3CD007A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B688EA03-B63C-4D7A-A0A8-6EA3CD007A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B688EA03-B63C-4D7A-A0A8-6EA3CD007A33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
