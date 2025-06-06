@@ -1,0 +1,6 @@
+@ASODotNetTrainingBatch1.WebApi_HostAddress = http://localhost:5145
+
+GET {{ASODotNetTrainingBatch1.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

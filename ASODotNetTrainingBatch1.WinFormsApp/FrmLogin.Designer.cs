@@ -41,9 +41,10 @@
             btnLogin.BackColor = Color.FromArgb(67, 160, 71);
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(243, 217);
+            btnLogin.Location = new Point(393, 258);
+            btnLogin.Margin = new Padding(4, 4, 4, 4);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(94, 29);
+            btnLogin.Size = new Size(129, 41);
             btnLogin.TabIndex = 0;
             btnLogin.Text = "&Login";
             btnLogin.UseVisualStyleBackColor = false;
@@ -52,33 +53,39 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(68, 38);
+            label1.Location = new Point(92, 28);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(78, 20);
+            label1.Size = new Size(103, 28);
             label1.TabIndex = 1;
             label1.Text = "Username:";
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(68, 72);
+            txtUsername.Location = new Point(92, 76);
+            txtUsername.Margin = new Padding(4, 4, 4, 4);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(269, 27);
+            txtUsername.Size = new Size(429, 34);
             txtUsername.TabIndex = 2;
+            txtUsername.KeyDown += txtUsername_KeyDown;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(68, 156);
+            txtPassword.Location = new Point(92, 192);
+            txtPassword.Margin = new Padding(4, 4, 4, 4);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(269, 27);
+            txtPassword.Size = new Size(429, 34);
             txtPassword.TabIndex = 3;
             txtPassword.UseSystemPasswordChar = true;
+            txtPassword.KeyDown += txtPassword_KeyDown;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(68, 121);
+            label2.Location = new Point(92, 144);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(73, 20);
+            label2.Size = new Size(97, 28);
             label2.TabIndex = 4;
             label2.Text = "Password:";
             // 
@@ -87,26 +94,29 @@
             btnCancel.BackColor = Color.FromArgb(55, 71, 79);
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(143, 217);
+            btnCancel.Location = new Point(252, 258);
+            btnCancel.Margin = new Padding(4, 4, 4, 4);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(94, 29);
+            btnCancel.Size = new Size(129, 41);
             btnCancel.TabIndex = 5;
             btnCancel.Text = "&Cancel";
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
-            // Form1
+            // FrmLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(404, 288);
+            ClientSize = new Size(615, 330);
             Controls.Add(btnCancel);
             Controls.Add(label2);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
             Controls.Add(label1);
             Controls.Add(btnLogin);
-            Name = "Form1";
+            Font = new Font("Segoe UI", 12F);
+            Margin = new Padding(4, 4, 4, 4);
+            Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ResumeLayout(false);
