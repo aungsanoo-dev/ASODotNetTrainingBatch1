@@ -1,121 +1,96 @@
-﻿using Dapper;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
+using Newtonsoft.Json;
 using System.Data;
 
-namespace ASODotNetTrainingBatch1.Shared
+namespace ASODotNetTrainingBatch1.Shared;
+
+public class AdoDotNetService
 {
-    public class AdoDotNetService
+    private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder;
+
+    //private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+    //{
+    //    DataSource = ".\\SQL2022Express",
+    //    InitialCatalog = "DotNetTrainingBatch1",
+    //    UserID = "sa",
+    //    Password = "sasa@123",
+    //    TrustServerCertificate = true
+    //};
+
+    public AdoDotNetService(SqlConnectionStringBuilder connectionStringBuilder)
     {
-        private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder;
-
-        //private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
-        //{
-        //    DataSource = ".\\SQL2022Express",
-        //    InitialCatalog = "DotNetTrainingBatch1",
-        //    UserID = "sa",
-        //    Password = "sasa@123",
-        //    TrustServerCertificate = true
-        //};
-
-        public AdoDotNetService(SqlConnectionStringBuilder connectionStringBuilder)
-        {
-            _sqlConnectionStringBuilder = connectionStringBuilder;
-        }
-        public DataTable Query(string query, List<SqlParameter> parameters)
-        {
-            //con = new SqlConnection(F21Party.Properties.Settings.Default.F21PartyCon);
-            SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
-            if (connection.State == ConnectionState.Open)
-                connection.Close();
-            connection.Open();
-
-            SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddRange(parameters.ToArray());
-            DataTable dt = new DataTable();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-            sqlDataAdapter.Fill(dt);
-
+        _sqlConnectionStringBuilder = connectionStringBuilder;
+    }
+    public DataTable Query(string query, List<SqlParameter> parameters)
+    {
+        //con = new SqlConnection(F21Party.Properties.Settings.Default.F21PartyCon);
+        SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
+        if (connection.State == ConnectionState.Open)
             connection.Close();
+        connection.Open();
 
-            return dt;
-        }
+        SqlCommand cmd = new SqlCommand(query, connection);
+        cmd.Parameters.AddRange(parameters.ToArray());
+        DataTable dt = new DataTable();
+        SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+        sqlDataAdapter.Fill(dt);
 
-        public DataTable Query(string query, params SqlParameter[] parameters)
-        {
-            //con = new SqlConnection(F21Party.Properties.Settings.Default.F21PartyCon);
-            SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
-            if (connection.State == ConnectionState.Open)
-                connection.Close();
-            connection.Open();
+        connection.Close();
 
-            SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddRange(parameters);
-            DataTable dt = new DataTable();
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-            sqlDataAdapter.Fill(dt);
-
-            connection.Close();
-
-            return dt;
-        }
-        public int Execute(string query, params SqlParameter[] parameters)
-        {
-            SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
-            if (connection.State == ConnectionState.Open)
-                connection.Close();
-            connection.Open();
-
-            SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddRange(parameters);
-            int result = cmd.ExecuteNonQuery();
-            connection.Close();
-
-            return result;
-        }
+        return dt;
     }
 
-    public class SqlService
+    public DataTable Query(string query, params SqlParameter[] parameters)
     {
-        private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
-        {
-            DataSource = ".\\SQL2022Express",
-            InitialCatalog = "DotNetTrainingBatch1",
-            UserID = "sa",
-            Password = "sasa@123",
-            TrustServerCertificate = true
-        };
-        public List<ASO> Query<ASO>(string query, object? parameters = null)
-        {
-            using IDbConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
-            if (connection.State == ConnectionState.Open)
-                connection.Close();
-            connection.Open();
-            var lst = connection.Query<ASO>(query, parameters).ToList();
+        //con = new SqlConnection(F21Party.Properties.Settings.Default.F21PartyCon);
+        SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
+        if (connection.State == ConnectionState.Open)
+            connection.Close();
+        connection.Open();
 
-            //SqlCommand cmd = new SqlCommand(query, connection);
-            //cmd.Parameters.AddRange(parameters.ToArray());
-            //DataTable dt = new DataTable();
-            //SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-            //sqlDataAdapter.Fill(dt);
+        SqlCommand cmd = new SqlCommand(query, connection);
+        cmd.Parameters.AddRange(parameters);
+        DataTable dt = new DataTable();
+        SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+        sqlDataAdapter.Fill(dt);
 
-            //connection.Close();
+        connection.Close();
 
-            return lst;
-        }
+        return dt;
+    }
+    public int Execute(string query, params SqlParameter[] parameters)
+    {
+        SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
+        if (connection.State == ConnectionState.Open)
+            connection.Close();
+        connection.Open();
 
-        public int Execute(string query, object? parameters = null)
-        {
-            using IDbConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
-            if (connection.State == ConnectionState.Open)
-                connection.Close();
-            connection.Open();
-            var result = connection.Execute(query, parameters);
-            //SqlCommand cmd = new SqlCommand(query, connection);
-            //cmd.Parameters.AddRange(parameters);
-            //int result = cmd.ExecuteNonQuery();
-            //connection.Close();  
+        SqlCommand cmd = new SqlCommand(query, connection);
+        cmd.Parameters.AddRange(parameters);
+        int result = cmd.ExecuteNonQuery();
+        connection.Close();
 
-            return result;
-        }
+        return result;
+    }
+
+    public List<T> QueryV2<T>(string query, params SqlParameter[] parameters)
+    {
+        //con = new SqlConnection(F21Party.Properties.Settings.Default.F21PartyCon);
+        SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
+        if (connection.State == ConnectionState.Open)
+            connection.Close();
+        connection.Open();
+
+        SqlCommand cmd = new SqlCommand(query, connection);
+        cmd.Parameters.AddRange(parameters);
+        DataTable dt = new DataTable();
+        SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+        sqlDataAdapter.Fill(dt);
+
+        connection.Close();
+
+        string jsonStr = JsonConvert.SerializeObject(dt);
+        var lst = JsonConvert.DeserializeObject<List<T>>(jsonStr);
+        return lst;
     }
 }

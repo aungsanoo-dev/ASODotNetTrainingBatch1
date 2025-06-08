@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ASODotNetTrainingBatch1.Shared;
+using ASODotNetTrainingBatch1.WebApi.Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 
 namespace ASODotNetTrainingBatch1.WebApi.Controllers
 {
@@ -8,26 +11,86 @@ namespace ASODotNetTrainingBatch1.WebApi.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        [HttpGet]
+        private readonly DapperService _dapperService;
+
+        public ProductController()
+        {
+            SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+            {
+                DataSource = ".\\SQL2022Express",
+                InitialCatalog = "DotNetTrainingBatch1",
+                UserID = "sa",
+                Password = "sasa@123",
+                TrustServerCertificate = true
+            };
+            _dapperService = new DapperService(_sqlConnectionStringBuilder);
+        }
+
+        [HttpGet()]
         public IActionResult GetProducts()
         {
-            // Simulate fetching products from a database or service
-            var products = new List<string> { "Product1", "Product2", "Product3" };
-            
-            // Return the list of products as a JSON response
-            return Ok(products);
+            var lst = _dapperService.Query<ProductModel>("select * from tbl_Product");
+            var data = new
+            {
+                IsSuccess = true,
+                Message = "Success.",
+                Data = lst,
+            };
+            return Ok(data);
+        }
+
+        [HttpGet("Edit")]
+        [HttpGet("{id}")]
+        public IActionResult GetProducts(int id)
+        {
+            string query = "select * from tbl_Product where ProductId=@ProductId";
+            var lst = _dapperService.Query<ProductModel>(query, new 
+            { 
+                ProductId = id 
+            });
+            if(lst.Count == 0)
+            {
+                return NotFound(new 
+                { 
+                    IsSuccess = false, 
+                    Message = "Product not found." 
+                });
+            }
+            var data = new
+            {
+                IsSuccess = true,
+                Message = "Success.",
+                Data = lst[0],
+            };
+            return Ok(data);
         }
 
         [HttpPost]
-        public IActionResult CreateProduct([FromBody] string productName)
+        public IActionResult CreateProducts([FromBody] ProductModel product)
         {
-            // Simulate creating a product
-            if (string.IsNullOrEmpty(productName))
+            product.CreatedDateTime = DateTime.Now;
+            product.CreatedBy = 1; 
+            string query = @"
+                insert into tbl_Product(
+                ProductName, 
+                ProductCategoryId, 
+                Price, Quantity, 
+                CreatedDateTime, 
+                CreatedBy)
+            values( 
+                @ProductName, 
+                @ProductCategoryId, 
+                @Price, 
+                @Quantity, 
+                @CreatedDateTime, 
+                @CreatedBy)";
+            int result = _dapperService.Execute(query, product);
+            var data = new
             {
-                return BadRequest("Product name cannot be empty.");
-            }
-            // Here you would typically save the product to a database
-            return CreatedAtAction(nameof(GetProducts), new { name = productName }, productName);
+                IsSuccess = result > 0,
+                Message = result > 0 ? "Success." : "Fail.",
+            };
+            return Ok(data);
         }
 
         [HttpPut]

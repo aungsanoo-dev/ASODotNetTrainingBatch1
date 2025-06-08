@@ -22,6 +22,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Sha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.ConsoleApp4", "ASODotNetTrainingBatch1.ConsoleApp4\ASODotNetTrainingBatch1.ConsoleApp4.csproj", "{6DBABFC1-8381-437B-9C79-C92261421F73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.ConsoleApp5", "ASODotNetTrainingBatch1.ConsoleApp5\ASODotNetTrainingBatch1.ConsoleApp5.csproj", "{54668B9F-6198-41B7-B26C-8F1AC95798A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Database", "ASODotNetTrainingBatch1.Database\ASODotNetTrainingBatch1.Database.csproj", "{58CF6E96-49FC-4D31-A645-CF990115690D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +60,14 @@ Global
 		{6DBABFC1-8381-437B-9C79-C92261421F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DBABFC1-8381-437B-9C79-C92261421F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DBABFC1-8381-437B-9C79-C92261421F73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54668B9F-6198-41B7-B26C-8F1AC95798A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54668B9F-6198-41B7-B26C-8F1AC95798A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54668B9F-6198-41B7-B26C-8F1AC95798A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54668B9F-6198-41B7-B26C-8F1AC95798A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58CF6E96-49FC-4D31-A645-CF990115690D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58CF6E96-49FC-4D31-A645-CF990115690D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58CF6E96-49FC-4D31-A645-CF990115690D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58CF6E96-49FC-4D31-A645-CF990115690D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
