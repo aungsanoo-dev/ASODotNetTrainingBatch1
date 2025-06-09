@@ -3,34 +3,82 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 
-Homework.Main(new string[] { "arg1", "arg2" });
+string text = "Hello World!";
+string result = text.Substring(0, text.Length - 1);
+Console.WriteLine(result);
 
-Product product = new Product(1, "P001", "Apple", 3000, 10, "Fruit");
+//Homework.Main(new string[] { "arg1", "arg2" });
 
+//Product product = new Product(1, "P001", "Apple", 3000, 10, "Fruit");
 
-BeforePrice:
-Console.WriteLine("Input Product Quantity: ");
-string quantityResult = Console.ReadLine();
-decimal price = 0;
-bool isDecimal = decimal.TryParse(quantityResult, out price);
-if(!isDecimal)
-{
-    Console.WriteLine("Invalid price.");
-    goto BeforePrice;
-}
+//BeforeSystem:
 
-BeforeQuantity:
-int quantity = 0;
-bool isInt = int.TryParse(quantityResult, out quantity);
-if (isInt)
-{
-    Console.WriteLine("Invalid Quantity");
-    goto BeforeQuantity;
-}
+//Console.WriteLine("Inventory Management System");
+//Console.WriteLine("1. Create Product");
+//Console.WriteLine("2. View Products");
+//Console.WriteLine("3. Update Product");
+//Console.WriteLine("4. Delete Product");
+//Console.WriteLine("5. Exit");
 
-Data.ProductId++;
+//Console.Write("Select an option: ");
+//int option = int.Parse(Console.ReadLine());
 
-string productCode = "P001";
+//InventoryService inventoryService = new InventoryService();
+
+//switch (option)
+//{
+//    case 1:
+//        Console.WriteLine("Create Product");
+//        inventoryService.CreateProduct();
+//        break;
+//    case 2:
+//        Console.WriteLine("View Products");
+//        //inventoryService.ViewProducts();
+//        break;
+//    case 3:
+//        Console.WriteLine("Update Product");
+//        inventoryService.UpdateProduct();
+//        break;
+//    case 4:
+//        Console.WriteLine("Delete Product");
+//        inventoryService.DeleteProduct();
+//        break;
+//    case 5:
+//        Console.WriteLine("Exiting...");
+//        break;
+//    default:
+//    Console.WriteLine("Invalid option");
+//    break;
+//}
+
+//goto BeforeSystem;
+
+//Exit:
+//Console.ReadKey();
+
+//BeforePrice:
+//Console.WriteLine("Input Product Quantity: ");
+//string quantityResult = Console.ReadLine();
+//decimal price = 0;
+//bool isDecimal = decimal.TryParse(quantityResult, out price);
+//if(!isDecimal)
+//{
+//    Console.WriteLine("Invalid price.");
+//    goto BeforePrice;
+//}
+
+//BeforeQuantity:
+//int quantity = 0;
+//bool isInt = int.TryParse(quantityResult, out quantity);
+//if (isInt)
+//{
+//    Console.WriteLine("Invalid Quantity");
+//    goto BeforeQuantity;
+//}
+
+//Data.ProductId++;
+
+//string productCode = "P001";
 
 //Product product = new Product
 //{
@@ -41,7 +89,7 @@ string productCode = "P001";
 //    Quantity = 100,
 //    Category = "Category A",
 //}
-   
+
 internal class Book
 {
     private string booktitle;

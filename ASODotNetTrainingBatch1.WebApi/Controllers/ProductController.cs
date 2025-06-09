@@ -1,8 +1,10 @@
 ﻿using ASODotNetTrainingBatch1.Shared;
 using ASODotNetTrainingBatch1.WebApi.Model;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using System;
 
 namespace ASODotNetTrainingBatch1.WebApi.Controllers
 {
@@ -105,16 +107,59 @@ namespace ASODotNetTrainingBatch1.WebApi.Controllers
             return NoContent(); // 204 No Content
         }
 
-        [HttpPatch]
-        public IActionResult UpdateProduct([FromBody] string productName)
+        [HttpPatch("{productId}")]
+        public IActionResult UpdateProduct(int productId, [FromBody] ProductModel product)
         {
-            // Simulate partial update of a product
-            if (string.IsNullOrEmpty(productName))
+            product.ProductId = productId;
+            string fields = string.Empty;
+
+            // " ", null, ""
+            if (product.ProductName != null && !string.IsNullOrEmpty(product.ProductName.Trim()))
             {
-                return BadRequest("Product name cannot be empty.");
+                fields += "[ProductName] = @ProductName,";
             }
-            // Here you would typically update the product in a database
-            return NoContent(); // 204 No Content
+            if (product.ProductCategoryId != null && product.ProductCategoryId > 0 )
+            {
+                fields += "[ProductCategoryId] = @ProductCategoryId,";
+            }
+            if (product.Price != null && product.Price > 0)
+            {
+                fields += "[Price] = @Price,";
+            }
+            if (product.Quantity != null && product.Quantity > 0)
+            {
+                fields += "[Quantity] = @Quantity,";
+            }
+
+            if(fields.Length == 0)
+            {
+                return BadRequest(new
+                {
+                    IsSuccess = false,
+                    Message = "No fields to update."
+                });
+            }
+
+            if(fields.Length > 0)
+            {
+                fields = fields.Substring(0, fields.Length - 1);
+            }
+
+            string query = $@"UPDATE [dbo].[Tbl_Product]
+                SET 
+                {fields}
+                ,[ModifiedDateTime] = @ModifiedDateTime
+                ,[ModifiedBy] = @ModifiedBy
+                WHERE ProductId = @ProductId";
+
+            int result = _dapperService.Execute(query, product);
+            var data = new
+            {
+                IsSuccess = result > 0,
+                Message = result > 0 ? "Success." : "Fail.",
+            };
+
+            return Ok(data); // 204 No Content
         }
     }
 }
