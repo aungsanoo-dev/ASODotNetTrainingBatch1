@@ -4,6 +4,7 @@ using System.Data;
 
 namespace ASODotNetTrainingBatch1.Shared;
 
+// Data Access Layer (DAL) using ADO.NET
 public class AdoDotNetService
 {
     private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder;

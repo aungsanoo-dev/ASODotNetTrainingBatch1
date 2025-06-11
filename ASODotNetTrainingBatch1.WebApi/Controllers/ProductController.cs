@@ -9,16 +9,17 @@ using System;
 
 namespace ASODotNetTrainingBatch1.WebApi.Controllers
 {
-    
+    // Presenation Layer (API Controller)
+
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly ProductService _productService;
+        private readonly IProductService _productService;
 
-        public ProductController()
+        public ProductController(IProductService productService)
         {
-            _productService = new ProductService();
+            _productService = productService;
         }
 
         [HttpGet]
@@ -43,6 +44,7 @@ namespace ASODotNetTrainingBatch1.WebApi.Controllers
         [HttpPost]
         public IActionResult CreateProducts([FromBody] ProductModel product)
         {
+            Console.WriteLine("CreateProduct => " + product.ToJson()); // Log the JSON representation
             var model = _productService.CreateProduct(product);
             return Ok(model);
         }
@@ -55,20 +57,20 @@ namespace ASODotNetTrainingBatch1.WebApi.Controllers
             {
                 return BadRequest("Product name cannot be empty.");
             }
-            // Here you would typically update the product in a database
-            return NoContent(); // 204 No Content
+     
+            return NoContent(); 
         }
 
         [HttpPatch("{productId}")]
         public IActionResult UpdateProduct(int productId, [FromBody] ProductModel product)
         {
             var model = _productService.UpdateProduct(productId, product);
-            return Ok(model); // 204 No Content
+            return Ok(model); 
         }
 
         [HttpDelete]
         public IActionResult DeleteProduct(int productId)
-        {
+        { 
             return Ok(productId);
         }
     }

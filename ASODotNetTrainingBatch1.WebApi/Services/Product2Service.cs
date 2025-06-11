@@ -9,11 +9,11 @@ namespace ASODotNetTrainingBatch1.WebApi.Services
 
     // Request => Request Model
     // Response => Model
-    public class ProductService : IProductService
+    public class Product2Service : IProductService
     {
         private readonly IDbV2Service _dapperService;
 
-        public ProductService(IDbV2Service dapperService)
+        public Product2Service(IDbV2Service dapperService)
         {
             _dapperService = dapperService;
         }
