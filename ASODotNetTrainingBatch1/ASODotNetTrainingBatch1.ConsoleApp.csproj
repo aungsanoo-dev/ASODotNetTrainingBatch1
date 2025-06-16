@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ASODotNetTrainingBatch1.Database\ASODotNetTrainingBatch1.Database.csproj" />
+  </ItemGroup>
+
 </Project>

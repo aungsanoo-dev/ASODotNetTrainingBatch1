@@ -29,6 +29,13 @@ namespace ASODotNetTrainingBatch1.WebApi.Controllers
             return Ok(model);
         }
 
+        [HttpGet("{pageNo}/{pageSize}")]
+        public IActionResult GetProducts(int pageNo, int pageSize)
+        {
+            var model = _productService.GetProducts(pageNo,pageSize);
+            return Ok(model);
+        }
+
         [HttpGet("Edit")]
         [HttpGet("{id}")]
         public IActionResult GetProducts(int id)

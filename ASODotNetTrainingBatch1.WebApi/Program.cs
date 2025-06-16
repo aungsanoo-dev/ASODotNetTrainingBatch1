@@ -23,7 +23,7 @@ builder.Services.AddSwaggerGen();
 //builder.Services.AddScoped<IDbV2Service, DapperService>();
 builder.Services.AddScoped<IDbV2Service, Dapper2Service>();
 //builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<IProductService, Product2Service>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 

@@ -26,6 +26,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Database", "ASODotNetTrainingBatch1.Database\ASODotNetTrainingBatch1.Database.csproj", "{58CF6E96-49FC-4D31-A645-CF990115690D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project1", "Project1", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Project1.Databases", "ASODotNetTrainingBatch1.Project1.Databases\ASODotNetTrainingBatch1.Project1.Databases.csproj", "{1432539F-59E4-46E8-9701-BE6BCE8011BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,9 +72,16 @@ Global
 		{58CF6E96-49FC-4D31-A645-CF990115690D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58CF6E96-49FC-4D31-A645-CF990115690D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58CF6E96-49FC-4D31-A645-CF990115690D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1432539F-59E4-46E8-9701-BE6BCE8011BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1432539F-59E4-46E8-9701-BE6BCE8011BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1432539F-59E4-46E8-9701-BE6BCE8011BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1432539F-59E4-46E8-9701-BE6BCE8011BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1432539F-59E4-46E8-9701-BE6BCE8011BF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BC3DFD12-4704-4502-AE89-6DC7F0FECAE4}

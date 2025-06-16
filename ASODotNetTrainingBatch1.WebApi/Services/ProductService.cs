@@ -30,6 +30,26 @@ namespace ASODotNetTrainingBatch1.WebApi.Services
             return model;
         }
 
+        public ResponseModel GetProducts(int pageNo, int pageSize)
+        {
+            string query = @"Select * from Products 
+                            ORDER BY ProductID
+                            OFFSET ((@PageNo - 1) * @PageSize) ROWS FETCH NEXT @PageSize ROWS ONLY";
+            var lst = _dapperService.Query<ProductModel>(query,
+                new
+                {
+                    PageNo = pageNo,
+                    PageSize = pageSize
+                });
+            var model = new ResponseModel
+            {
+                IsSuccess = true,
+                Message = "Success.",
+                Data = lst,
+            };
+            return model;
+        }
+
         public ResponseModel GetProductById(int id)
         {
             string query = "select * from tbl_Product where ProductId=@ProductId";

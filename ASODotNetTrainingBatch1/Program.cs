@@ -1,4 +1,5 @@
 ﻿using ASODotNetTrainingBatch1;
+using ASODotNetTrainingBatch1.Database.NorthwindModels;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
@@ -7,6 +8,16 @@ string text = "Hello World!";
 string result = text.Substring(0, text.Length - 1);
 Console.WriteLine(result);
 
+int pageNo = Convert.ToInt32( Console.ReadLine());
+int pageSize = Convert.ToInt32(Console.ReadLine());
+
+NorthwindAppDbContext db = new NorthwindAppDbContext();
+var lst = db.Products.Skip((pageNo - 1) * pageSize).Take(pageSize).ToList();
+
+foreach (var item in lst)
+{
+    Console.WriteLine(item.ProductId);
+}
 //Homework.Main(new string[] { "arg1", "arg2" });
 
 //Product product = new Product(1, "P001", "Apple", 3000, 10, "Fruit");

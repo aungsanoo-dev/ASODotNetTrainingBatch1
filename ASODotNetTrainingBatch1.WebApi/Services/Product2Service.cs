@@ -162,5 +162,10 @@ namespace ASODotNetTrainingBatch1.WebApi.Services
             };
             return model;
         }
+
+        public ResponseModel GetProducts(int pageNo, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

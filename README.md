@@ -14,4 +14,5 @@
 - RestSharp
 - Refit
 - Console App + API
-- 
+
+dotnet ef dbcontext scaffold "Server=.\SQL2022Express;Database=Northwind;User Id=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o NorthwindModels -c NorthwindAppDbContext -f

@@ -41,7 +41,7 @@ namespace ASODotNetTrainingBatch1
             string productCode = "P" + Data.ProductId.ToString().PadLeft(3, '0'); 
 
             Product product = new Product(Data.ProductId, productCode, productName, price, quantity, "Fruit");
-            Data.Products.Add(product);
+            //Data.Products.Add(product);
             Console.WriteLine("Product add successfully!");
 
             
@@ -107,7 +107,7 @@ namespace ASODotNetTrainingBatch1
             }
             else if (comfirm.ToUpper() == "Y")
             {
-                Data.Products.Remove(product);
+                //Data.Products.Remove(product);
                 Console.WriteLine("Delete Successfully");
             }
             else if (comfirm.ToUpper() == "N")
