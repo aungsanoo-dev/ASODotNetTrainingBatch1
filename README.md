@@ -31,3 +31,5 @@ dotnet ef dbcontext scaffold "Server=.\SQL2022Express;Database=DotNetTrainingBat
 > Database > Domain > API Project (DI)
 
 dotnet ef dbcontext scaffold "Server=.\SQL2022Express;Database=MiniWallet;User Id=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o AppDbContextModels -c AppDbContext -f
+
+dotnet ef dbcontext scaffold "Server=.\SQL2022Express;Database=DreamDictionary;User Id=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o AppDbContextModels -c AppDbContext -f

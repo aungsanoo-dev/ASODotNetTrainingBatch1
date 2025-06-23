@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ASODotNetTrainingBatch1.Project2.Databases\ASODotNetTrainingBatch1.Project2.Databases.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="DreamDictionary.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

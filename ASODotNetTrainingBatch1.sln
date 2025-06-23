@@ -44,6 +44,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Project.Databases", "ASODotNetTrainingBatch1.Project.Databases\ASODotNetTrainingBatch1.Project.Databases.csproj", "{AE0586F1-DA02-48BB-9646-94385C2B0806}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Project2.Databases", "ASODotNetTrainingBatch1.Project2.Databases\ASODotNetTrainingBatch1.Project2.Databases.csproj", "{3BAD15BC-75D8-415B-BC56-BF196EE9B0FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +112,10 @@ Global
 		{AE0586F1-DA02-48BB-9646-94385C2B0806}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE0586F1-DA02-48BB-9646-94385C2B0806}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE0586F1-DA02-48BB-9646-94385C2B0806}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BAD15BC-75D8-415B-BC56-BF196EE9B0FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BAD15BC-75D8-415B-BC56-BF196EE9B0FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BAD15BC-75D8-415B-BC56-BF196EE9B0FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BAD15BC-75D8-415B-BC56-BF196EE9B0FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +127,7 @@ Global
 		{6C340192-17B5-4E58-AE8C-B7F23D08168B} = {61031E27-704F-4211-84B7-42626DDCEA6D}
 		{D47D4AE5-A29A-4E19-AB4F-0CDDA06636CD} = {97711AD1-49C1-4376-B033-D3FDCE7A3C59}
 		{AE0586F1-DA02-48BB-9646-94385C2B0806} = {97711AD1-49C1-4376-B033-D3FDCE7A3C59}
+		{3BAD15BC-75D8-415B-BC56-BF196EE9B0FF} = {61031E27-704F-4211-84B7-42626DDCEA6D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BC3DFD12-4704-4502-AE89-6DC7F0FECAE4}

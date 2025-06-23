@@ -1,48 +1,45 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Newtonsoft.Json;
+using ASODotNetTrainingBatch1.Project2.Databases.AppDbContextModels;
 
-//int originalNumber = 1;
-//test(ref originalNumber);
-
-//void test(ref int number)
-//{
-//    number = 10;
-//}
-
-
-//string originalString = "1";
-//testr(ref originalString);
-
-//void testr(ref string orgString)
-//{
-//    //orgString = "10";
-//}
-
-//string test3 = "";
-
-//void test2(out string test)
-//{
-//    test = "10";
-//}
-//Console.WriteLine(test3);
-//test2(out test3);
-
-//Console.WriteLine(test3);
-
-//Console.WriteLine("Original Number:" + originalNumber);
-//Console.WriteLine("Original String:" + originalString);
 
 string jsonStr = File.ReadAllText("DreamDictionary.json");
 
 var model = JsonConvert.DeserializeObject<DreamDictionaryResponseModel>(jsonStr);
 
-var lst = model.BlogDetail.ToList();
+var lst1 = model.BlogHeader;
+var lst2 = model.BlogDetail;
 
-Console.WriteLine(jsonStr);
+//Console.WriteLine(jsonStr);
+//Console.ReadLine();
+
+var _dbContext = new AppDbContext();
+
+//foreach (var detail in lst2)
+//{
+//    var entity = new TblBlogDetail
+//    {
+//        BlogDetailId = detail.BlogDetailId,
+//        BlogId = detail.BlogId,
+//        BlogContent = detail.BlogContent
+//    };
+//    _dbContext.TblBlogDetails.Add(entity);
+//}
+//_dbContext.SaveChanges();
+
+//foreach (var header in lst1)
+//{
+//    var entity = new TblBlogHeader
+//    {
+//        BlogId = header.BlogId,
+//        BlogTitle = header.BlogTitle
+//    };
+//    _dbContext.TblBlogHeaders.Add(entity);
+//}
+//_dbContext.SaveChanges();
+
+Console.WriteLine("Completed!");
 Console.ReadLine();
-
-
-
 public class DreamDictionaryResponseModel
 {
     public Blogheader[] BlogHeader { get; set; }
