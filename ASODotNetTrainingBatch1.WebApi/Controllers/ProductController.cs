@@ -36,7 +36,7 @@ namespace ASODotNetTrainingBatch1.WebApi.Controllers
             return Ok(model);
         }
 
-        [HttpGet("Edit")]
+        [HttpGet("Edit/{id}")]
         [HttpGet("{id}")]
         public IActionResult GetProducts(int id)
         {
