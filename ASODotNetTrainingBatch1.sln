@@ -52,6 +52,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Pro
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project2", "Project2", "{0A45781C-827C-4E0C-BFFF-2EA9EB159A87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Project2.ConsoleApp", "ASODotNetTrainingBatch1.Project2.ConsoleApp1\ASODotNetTrainingBatch1.Project2.ConsoleApp.csproj", "{2A78ABE5-DF44-4174-A96F-5C38CED7CEFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -130,6 +132,10 @@ Global
 		{BAC8CA4E-445E-490C-ABB0-43C49798612A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAC8CA4E-445E-490C-ABB0-43C49798612A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAC8CA4E-445E-490C-ABB0-43C49798612A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A78ABE5-DF44-4174-A96F-5C38CED7CEFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A78ABE5-DF44-4174-A96F-5C38CED7CEFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A78ABE5-DF44-4174-A96F-5C38CED7CEFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A78ABE5-DF44-4174-A96F-5C38CED7CEFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,6 +149,7 @@ Global
 		{AE0586F1-DA02-48BB-9646-94385C2B0806} = {97711AD1-49C1-4376-B033-D3FDCE7A3C59}
 		{3BAD15BC-75D8-415B-BC56-BF196EE9B0FF} = {61031E27-704F-4211-84B7-42626DDCEA6D}
 		{BAC8CA4E-445E-490C-ABB0-43C49798612A} = {97711AD1-49C1-4376-B033-D3FDCE7A3C59}
+		{2A78ABE5-DF44-4174-A96F-5C38CED7CEFD} = {0A45781C-827C-4E0C-BFFF-2EA9EB159A87}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BC3DFD12-4704-4502-AE89-6DC7F0FECAE4}
