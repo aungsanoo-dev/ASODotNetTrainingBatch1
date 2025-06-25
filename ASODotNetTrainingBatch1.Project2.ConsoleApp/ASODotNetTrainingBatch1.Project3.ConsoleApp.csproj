@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ASODotNetTrainingBatch1.Project2.Databases\ASODotNetTrainingBatch1.Project2.Databases.csproj" />
+    <ProjectReference Include="..\ASODotNetTrainingBatch1.Project2.Databases\ASODotNetTrainingBatch1.Project3.Databases.csproj" />
   </ItemGroup>
 
   <ItemGroup>

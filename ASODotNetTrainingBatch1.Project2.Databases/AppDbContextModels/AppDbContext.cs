@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace ASODotNetTrainingBatch1.Project2.Databases.AppDbContextModels;
+namespace ASODotNetTrainingBatch1.Project3.Databases.AppDbContextModels;
 
 public partial class AppDbContext : DbContext
 {

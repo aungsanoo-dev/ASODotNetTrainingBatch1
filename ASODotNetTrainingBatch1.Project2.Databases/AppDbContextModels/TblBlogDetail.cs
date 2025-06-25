@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ASODotNetTrainingBatch1.Project2.Databases.AppDbContextModels;
+namespace ASODotNetTrainingBatch1.Project3.Databases.AppDbContextModels;
 
 public partial class TblBlogDetail
 {

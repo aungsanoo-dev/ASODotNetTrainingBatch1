@@ -34,9 +34,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Domain", "ASODotNetTrainingBatch1.Domain\ASODotNetTrainingBatch1.Domain.csproj", "{4E735D30-43C9-46E1-BF57-2C08F4CFA423}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project2", "Project2", "{61031E27-704F-4211-84B7-42626DDCEA6D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project3", "Project3", "{61031E27-704F-4211-84B7-42626DDCEA6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Project2.ConsoleApp", "ASODotNetTrainingBatch1.Project2.ConsoleApp\ASODotNetTrainingBatch1.Project2.ConsoleApp.csproj", "{6C340192-17B5-4E58-AE8C-B7F23D08168B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Project3.ConsoleApp", "ASODotNetTrainingBatch1.Project2.ConsoleApp\ASODotNetTrainingBatch1.Project3.ConsoleApp.csproj", "{6C340192-17B5-4E58-AE8C-B7F23D08168B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project4", "Project4", "{97711AD1-49C1-4376-B033-D3FDCE7A3C59}"
 EndProject
@@ -44,11 +44,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Pro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Project.Databases", "ASODotNetTrainingBatch1.Project.Databases\ASODotNetTrainingBatch1.Project.Databases.csproj", "{AE0586F1-DA02-48BB-9646-94385C2B0806}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Project2.Databases", "ASODotNetTrainingBatch1.Project2.Databases\ASODotNetTrainingBatch1.Project2.Databases.csproj", "{3BAD15BC-75D8-415B-BC56-BF196EE9B0FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Project3.Databases", "ASODotNetTrainingBatch1.Project2.Databases\ASODotNetTrainingBatch1.Project3.Databases.csproj", "{3BAD15BC-75D8-415B-BC56-BF196EE9B0FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.MinimalApi", "ASODotNetTrainingBatch1.MinimalApi\ASODotNetTrainingBatch1.MinimalApi.csproj", "{CB2A5423-DFF7-477B-A06C-ED404EF4B728}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASODotNetTrainingBatch1.Project4.ConsoleApp", "ASODotNetTrainingBatch1.Project4.ConsoleApp\ASODotNetTrainingBatch1.Project4.ConsoleApp.csproj", "{BAC8CA4E-445E-490C-ABB0-43C49798612A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project2", "Project2", "{0A45781C-827C-4E0C-BFFF-2EA9EB159A87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

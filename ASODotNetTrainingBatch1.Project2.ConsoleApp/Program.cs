@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Newtonsoft.Json;
-using ASODotNetTrainingBatch1.Project2.Databases.AppDbContextModels;
+using ASODotNetTrainingBatch1.Project3.Databases.AppDbContextModels;
 
 
 string jsonStr = File.ReadAllText("DreamDictionary.json");
